@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+{{!-- <table border='1'> --}}
+<h2>{{getLength data}} matching records found!</h2>
+
+    {{#each data}}
+
+        <div class="w3-card-4 w3-hover-shadow w3-center">
+        {{#hasProperty this "Invoice ID"}}
+                {{!-- <tr>
+                    <th>Invoice ID</th>
+                    <td>{{getProperty this "Invoice ID"}}</td>
+                </tr> --}}
+                <header class="w3-container w3-blue">
+                    <h1>{{getProperty this "Invoice ID"}}</h1>
+                </header>
+        {{/hasProperty}}
+
+        {{#hasProperty this "Product line"}}
+                {{!-- <tr>
+                    <th>Product line</th>
+                    <td>{{getProperty this "Product line"}}</td>
+                </tr> --}}
+                <div class="w3-container">
+                    <p>{{getProperty this "Product line"}}</p>
+                </div>
+        {{/hasProperty}}
+
+        {{#hasProperty this "name"}}
+                {{!-- <tr>
+                    <th>Name</th>
+                    <td>{{getProperty this "name"}}</td>
+                </tr> --}}
+                <footer class="w3-container w3-gray">
+                    <h5>{{getProperty this "name"}}</h5>
+                </footer>
+        {{/hasProperty}}
+
+        </div>
+
+    {{/each}}
+
+</body>
+</html>
+
+{{!-- </table> --}}

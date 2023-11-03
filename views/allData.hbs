@@ -1,0 +1,128 @@
+<table border='1'>
+
+    {{#each data}}
+
+        {{#hasProperty this "Invoice ID"}}
+                <tr>
+                    <th>Invoice ID</th>
+                    <td>{{getProperty this "Invoice ID"}}</td>
+                </tr>
+        {{/hasProperty}}
+
+        {{#hasProperty this "Branch"}}
+                <tr>
+                    <th>Branch</th>
+                    <td>{{getProperty this "Branch"}}</td>
+                </tr>
+        {{/hasProperty}}
+
+        {{#hasProperty this "City"}}
+                <tr>
+                    <th>City</th>
+                    <td>{{getProperty this "City"}}</td>
+                </tr>
+        {{/hasProperty}}
+
+        {{#hasProperty this "Customer type"}}
+                <tr>
+                    <th>Customer type</th>
+                    <td>{{getProperty this "Customer type"}}</td>
+                </tr>
+        {{/hasProperty}}
+
+        {{#hasProperty this "Product line"}}
+                <tr>
+                    <th>Product line</th>
+                    <td>{{getProperty this "Product line"}}</td>
+                </tr>
+        {{/hasProperty}}
+
+        {{#hasProperty this "name"}}
+                <tr>
+                    <th>Name</th>
+                    <td>{{getProperty this "name"}}</td>
+                </tr>
+        {{/hasProperty}}
+
+        {{#hasProperty this "image"}}
+                <tr>
+                    <th>Image</th>
+                    <td><img src={{getProperty this "image"}} alt="image"></td>
+                </tr>
+        {{/hasProperty}}
+
+        {{#hasProperty this "Unit price"}}
+                <tr>
+                    <th>Unit price</th>
+                    <td>{{getProperty this "Unit price"}}</td>
+                </tr>
+        {{/hasProperty}}
+
+        {{#hasProperty this "Quantity"}}
+                <tr>
+                    <th>Quantity</th>
+                    <td>{{getProperty this "Quantity"}}</td>
+                </tr>
+        {{/hasProperty}}
+
+        {{#hasProperty this "Tax 5%"}}
+                <tr>
+                    <th>Tax 5%</th>
+                    <td>{{getProperty this "Tax 5%"}}</td>
+                </tr>
+        {{/hasProperty}}
+
+        {{#hasProperty this "Total"}}
+                <tr>
+                    <th>Total</th>
+                    <td>{{getProperty this "Total"}}</td>
+                </tr>
+        {{/hasProperty}}
+
+        {{#hasProperty this "Date"}}
+                <tr>
+                    <th>Date</th>
+                    <td>{{getProperty this "Date"}}</td>
+                </tr>
+        {{/hasProperty}}
+
+        {{#hasProperty this "Time"}}
+                <tr>
+                    <th>Time</th>
+                    <td>{{getProperty this "Time"}}</td>
+                </tr>
+        {{/hasProperty}}
+
+        {{#hasProperty this "Payment"}}
+                <tr>
+                    <th>Payment</th>
+                    <td>{{getProperty this "Payment"}}</td>
+                </tr>
+        {{/hasProperty}}
+
+        {{#hasProperty this "cogs"}}
+                <tr>
+                    <th>Cogs</th>
+                    <td>{{getProperty this "cogs"}}</td>
+                </tr>
+        {{/hasProperty}}
+
+        {{#hasProperty this "gross income"}}
+                <tr>
+                    <th>Gross Income</th>
+                    <td>{{getProperty this "gross income"}}</td>
+                </tr>
+        {{/hasProperty}}
+
+        {{#hasProperty this "Rating"}}
+                {{!-- <tr> --}}
+                <tr {{#unless (ratingCheck (getProperty this "Rating"))}}class="highlight"{{/unless}}>
+                    <th>Rating</th>
+                    {{!-- <td>{{getProperty this "Rating"}}</td> --}}
+                    <td>{{#changeZeroRating (getProperty this "Rating")}}Zero{{/changeZeroRating}}</td>
+                </tr>
+        {{/hasProperty}}
+    
+    {{/each}}
+
+</table>

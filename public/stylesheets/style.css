@@ -1,0 +1,25 @@
+body {
+    /* padding: 50px; */
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header, footer{
+    background-color: rgb(235, 231, 231);
+    color: rgb(128, 188, 218);
+}
+
+header{
+    margin-top: 0px;
+}
+
+footer{
+    margin-top: auto;
+}
+
+.highlight {
+    background-color: yellow;
+}
