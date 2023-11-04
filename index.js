@@ -1,3 +1,16 @@
+/******************************************************************************
+***
+* ITE5315 – Assignment 2
+* I declare that this assignment is my own work in accordance with Humber Academic Policy.
+* No part of this assignment has been copied manually or electronically from any other source
+* (including web sites) or distributed to other students.
+*
+* Name: Keziah Thomas Student ID: N01541155 Date: 03/11/23
+*
+*
+******************************************************************************
+**/
+
 //Importing the required modules
 var express = require('express');
 var path = require('path');
@@ -32,11 +45,8 @@ app.engine('.hbs', exphbs.engine({ extname: '.hbs', helpers: {hasProperty: funct
 }
 
 } }));
-app.set('view engine', '.hbs');
 
-// exphbs.registerHelper('hasProperty', function (obj, key, options) {
-//     return obj.hasOwnProperty(key) ? options.fn(this) : options.inverse(this);
-// });
+app.set('view engine', '.hbs');
 
 //For / route
 app.get('/', function(req, res) {
@@ -185,6 +195,7 @@ app.post("/search/ProductLine", function (req, res) {
     });
 });
 
+//For /viewData route
 app.get("/viewData", function (req, res) {
     fs.readFile("SuperSales.json", (err, content) => {
         // Error Handling
